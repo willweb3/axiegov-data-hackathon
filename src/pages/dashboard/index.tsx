@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Typography from '@mui/material/Typography';
+import DashboardLayout from '../../components/DashboardLayout';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -16,10 +18,14 @@ const Dashboard = () => {
   }, [router]);
 
   return (
-    <div>
-      <h1>Bem-vindo ao Dashboard</h1>
-      <p>Você está conectado à Ronin Wallet.</p>
-    </div>
+    <DashboardLayout>
+      <Typography variant="h4" gutterBottom>
+        Dashboard Principal
+      </Typography>
+      <Typography variant="body1">
+        Selecione uma opção no menu para visualizar os dados do tesouro.
+      </Typography>
+    </DashboardLayout>
   );
 };
 
